@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-66s@h4#38yn3_41qegsp1b+9k^$(8q1e&8s5)sgu=3#zifn-sf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jaylsiwaylsi.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['jaylsiwaylsi.pythonanywhere.com', 
+'127.0.0.1',
+'2edc-82-132-239-64.eu.ngrok.io']
 
 
 # Application definition
@@ -132,3 +134,6 @@ MEDIA_ROOT = '/home/jaylsiwaylsi/mysite/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/jaylsiwaylsi/mysite/static'
 STATIC_URL = '/static/'
+
+# added by ln
+APP_NAME = 'DJ4E Samples'
