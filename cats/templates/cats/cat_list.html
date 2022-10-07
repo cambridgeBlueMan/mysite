@@ -1,0 +1,27 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+  <h1>Make List</h1>
+  {% if cat_list %}
+  <ul>
+    {% for cat in cat_list %}
+    
+      <li>
+          {{ cat.nickname }} , {{cat.breed}}
+          {% comment %}
+         (<a href="{% url 'cats:cat_update' cat.id %}">Update</a> |
+          <a href="{% url 'cats:cat_delete' cat.id %}">Delete</a>)
+          {% endcomment %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no cats in the library.</p>
+  {% endif %}
+  {% comment %}
+  <p><a href="{% url 'cats:cat_create' %}">Add a cat</a></p>
+  <p>
+    <a href="{% url 'cats:all' %}">Back to cats</a>
+  </p>
+  {% endcomment %}
+{% endblock %}
