@@ -16,7 +16,7 @@ class Cat(models.Model):
         validators=[MinLengthValidator(2, "Nickname must be greater than 1 character")]
     )
     weight = models.PositiveIntegerField()
-    food = models.CharField(max_length=300)
+    foods = models.CharField(max_length=300)
 
     breed=models.ForeignKey('Breed', on_delete=models.CASCADE, null = False) 
 

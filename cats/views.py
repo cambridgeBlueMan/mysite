@@ -105,18 +105,18 @@ class MakeDelete(LoginRequiredMixin, View):
 class BreedCreate(LoginRequiredMixin, CreateView):
     model = Breed
     fields = '__all__'
-    success_url = reverse_lazy('cats:breed_list')
+    success_url = reverse_lazy('cats:all')
 
 class BreedUpdate(LoginRequiredMixin, UpdateView):
     model = Breed
     fields = '__all__'
-    success_url = reverse_lazy('cats:breed_list')
+    success_url = reverse_lazy('cats:all')
 
 
 class BreedDelete(LoginRequiredMixin, DeleteView):
     model = Breed
     fields = '__all__'
-    success_url = reverse_lazy('cats:breed_list')
+    success_url = reverse_lazy('cats:all')
 
 # CATS
 class CatCreate(LoginRequiredMixin, CreateView):

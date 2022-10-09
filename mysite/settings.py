@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['jaylsiwaylsi.pythonanywhere.com', 
 '127.0.0.1',
-'2edc-82-132-239-64.eu.ngrok.io']
+'6b31-82-132-229-239.eu.ngrok.io']
 
 
 # Application definition
