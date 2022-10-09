@@ -7,7 +7,7 @@ import csv  # https://docs.python.org/3/library/csv.html
 from cats.models import Cat, Breed
 
 def run():
-    fhand = open('cats/meow.csv')
+    fhand = open('cats/meow_short.csv')
     reader = csv.reader(fhand)
     next(reader)  # Advance past the header
 

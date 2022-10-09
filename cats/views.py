@@ -23,13 +23,14 @@ class MainView(LoginRequiredMixin, View):
         ctx = {'cat_list': al}
         return render(request, 'cats/cat_list.html', ctx)
 
-"""
-class MakeView(LoginRequiredMixin, View):
-    def get(self, request):
-        ml = Make.objects.all()
-        ctx = {'make_list': ml}
-        return render(request, 'autos/make_list.html', ctx)
 
+class BreedView(LoginRequiredMixin, View):
+    def get(self, request):
+        ml = Breed.objects.all()
+        ctx = {'breed_list': ml}
+        return render(request, 'cats/breed_list.html', ctx)
+
+"""
 
 # We use reverse_lazy() because we are in "constructor attribute" code
 # that is run before urls.py is completely loaded
@@ -93,27 +94,47 @@ class MakeDelete(LoginRequiredMixin, View):
         make.delete()
         return redirect(self.success_url)
 
-
+"""
 # Take the easy way out on the main table
 # These views do not need a form because CreateView, etc.
 # Build a form object dynamically based on the fields
 # value in the constructor attributes
-class AutoCreate(LoginRequiredMixin, CreateView):
-    model = Auto
+
+# BREEDS
+
+class BreedCreate(LoginRequiredMixin, CreateView):
+    model = Breed
     fields = '__all__'
-    success_url = reverse_lazy('autos:all')
+    success_url = reverse_lazy('cats:breed_list')
 
-
-class AutoUpdate(LoginRequiredMixin, UpdateView):
-    model = Auto
+class BreedUpdate(LoginRequiredMixin, UpdateView):
+    model = Breed
     fields = '__all__'
-    success_url = reverse_lazy('autos:all')
+    success_url = reverse_lazy('cats:breed_list')
 
 
-class AutoDelete(LoginRequiredMixin, DeleteView):
-    model = Auto
+class BreedDelete(LoginRequiredMixin, DeleteView):
+    model = Breed
     fields = '__all__'
-    success_url = reverse_lazy('autos:all')
+    success_url = reverse_lazy('cats:breed_list')
+
+# CATS
+class CatCreate(LoginRequiredMixin, CreateView):
+    model = Cat
+    fields = '__all__'
+    success_url = reverse_lazy('cats:all')
+
+
+class CatUpdate(LoginRequiredMixin, UpdateView):
+    model = Cat
+    fields = '__all__'
+    success_url = reverse_lazy('cats:all')
+
+
+class CatDelete(LoginRequiredMixin, DeleteView):
+    model = Cat
+    fields = '__all__'
+    success_url = reverse_lazy('cats:all')
 
 # We use reverse_lazy rather than reverse in the class attributes
 # because views.py is loaded by urls.py and in urls.py as_view() causes
@@ -124,4 +145,3 @@ class AutoDelete(LoginRequiredMixin, DeleteView):
 
 # https://docs.djangoproject.com/en/3.0/ref/class-based-views/generic-editing/#createview
 
-"""
