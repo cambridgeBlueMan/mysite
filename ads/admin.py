@@ -1,6 +1,6 @@
 from django.contrib import admin
-from myarts.models import Article
+from ads.models import Ad
 
 # Register your models here.
 
-admin.site.register(Article)
+admin.site.register(Ad)
