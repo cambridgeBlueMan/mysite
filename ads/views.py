@@ -14,11 +14,13 @@ from ads.owner import OwnerListView, OwnerDetailView, OwnerCreateView, OwnerUpda
 class AdListView(OwnerListView):
     model = Ad
     # By convention:
-    # template_name = "Ads/Ad_list.html"
+    template_name = "ads/ad_list.html"
 
 
 class AdDetailView(OwnerDetailView):
     model = Ad
+    print ("in view!!!")
+    template_name = "ads/ad_detail.html"
 
 """ class AdCreateView(OwnerCreateView):
     model = Ad
