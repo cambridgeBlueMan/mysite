@@ -46,7 +46,11 @@ INSTALLED_APPS = [
     'rest_framework', 
     'social_django',  
     'taggit',
-    'home.apps.HomeConfig',  
+    'home.apps.HomeConfig', 
+
+    # auth
+    'social_django',
+    'social_django_mongoengine', 
 
     
 ]
@@ -149,6 +153,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
+# from https://python-social-auth.readthedocs.io/en/latest/configuration/django.html
+SOCIAL_AUTH_STORAGE = 'social_django_mongoengine.models.DjangoStorage'
 
 # Configure the social login
 try:
